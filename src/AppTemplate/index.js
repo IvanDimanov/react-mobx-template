@@ -1,9 +1,15 @@
-import Restore from 'react-restore'
+import React from 'react'
+import { withStyles } from 'material-ui/styles'
 
-import Layout from './Layout'
+import Header from './Header'
 
-import actions from './actions'
-import initialState from './initialState'
+const styles = (theme) => ({
+  main: theme.typography.body1
+})
 
-const store = Restore.create(initialState, actions)
-export default Restore.connect(Layout, store)
+const Layout = ({ children, classes }) => <div className={classes.main}>
+  <Header />
+  {children}
+</div>
+
+export default withStyles(styles)(Layout)

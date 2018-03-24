@@ -1,6 +1,8 @@
-import React, { PureComponent } from 'react'
-import { connect } from 'react-restore'
+import React, { Component } from 'react'
+import { observer } from 'mobx-react'
 import { withStyles } from 'material-ui/styles'
+
+import AvatarStore from 'stores/AvatarStore'
 
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
@@ -18,7 +20,7 @@ const styles = {
   }
 }
 
-class Header extends PureComponent {
+class Header extends Component {
   state = {
     anchorEl: null
   }
@@ -36,7 +38,7 @@ class Header extends PureComponent {
     const { anchorEl } = this.state
     const open = Boolean(anchorEl)
     const { classes } = this.props
-    const avatar = this.store('avatar')
+    const avatar = AvatarStore.avatar
 
     return <AppBar
       position='static'
@@ -86,7 +88,7 @@ class Header extends PureComponent {
 
               <MenuItem onClick={() => {
                 this.handleClose()
-                this.store.setAvatar()
+                AvatarStore.setAvatar()
               }}>
                 Logout
               </MenuItem>
@@ -98,5 +100,4 @@ class Header extends PureComponent {
   }
 }
 
-const ConnectedHeader = connect(Header)
-export default withStyles(styles)((props) => <ConnectedHeader {...props} />)
+export default withStyles(styles)(observer(Header))

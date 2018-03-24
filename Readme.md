@@ -1,8 +1,8 @@
 # React MobX template
 Production ready setup for React + MobX
 
-111 ## [Live Demo](https://react-restore-template.now.sh)
-222 ## [![App](https://raw.githubusercontent.com/IvanDimanov/restore-app-template/master/image.png)](https://react-restore-template.now.sh)
+## [Live Demo](https://react-mobx-template ...)
+## [![App](https://raw.githubusercontent.com/IvanDimanov/react-mobx-template/master/image.png)](https://react-mobx-template ...)
 
 ## If you run ...
 ```

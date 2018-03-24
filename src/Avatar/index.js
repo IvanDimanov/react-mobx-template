@@ -1,6 +1,8 @@
-import React, { PureComponent } from 'react'
-import { connect } from 'react-restore'
+import React, { Component } from 'react'
+import { observer } from 'mobx-react'
 import { withStyles } from 'material-ui/styles'
+
+import AvatarStore from 'stores/AvatarStore'
 
 import Grid from 'material-ui/Grid'
 import TextField from 'material-ui/TextField'
@@ -26,7 +28,7 @@ const styles = {
   }
 }
 
-class Avatar extends PureComponent {
+class Avatar extends Component {
   state = {
     searchName: ''
   }
@@ -38,7 +40,7 @@ class Avatar extends PureComponent {
 
   renderUser = (result, index) => {
     const { classes } = this.props
-    const isSearchLoading = this.store('avatarStore.isSearchLoading')
+    const isSearchLoading = AvatarStore.isSearchLoading
 
     return <Card
       key={index}
@@ -60,7 +62,7 @@ class Avatar extends PureComponent {
         <Button
           size='small'
           color='primary'
-          onClick={() => this.store.avatarStore.loadUserRepos(result.login)}
+          onClick={() => AvatarStore.loadUserRepos(result.login)}
           disabled={isSearchLoading}
         >
           Load Repos
@@ -69,7 +71,7 @@ class Avatar extends PureComponent {
         <Button
           size='small'
           color='primary'
-          onClick={() => this.store.setAvatar(result)}
+          onClick={() => AvatarStore.setAvatar(result)}
         >
           Set as Avatar
         </Button>
@@ -115,9 +117,9 @@ class Avatar extends PureComponent {
   render () {
     const { searchName } = this.state
     const { classes } = this.props
-    const isSearchLoading = this.store('avatarStore.isSearchLoading')
-    const searchUsers = this.store('avatarStore.searchUsers')
-    const userRepos = this.store('avatarStore.userRepos')
+    const isSearchLoading = AvatarStore.isSearchLoading
+    const searchUsers = AvatarStore.searchUsers
+    const userRepos = AvatarStore.userRepos
 
     return <CenteredGrid className={classes.CenteredGrid}>
       <TextField
@@ -125,7 +127,7 @@ class Avatar extends PureComponent {
         label='Search GitHub User'
         value={searchName}
         onChange={this.setSearchName}
-        onKeyPress={(event) => event.key === 'Enter' ? this.store.avatarStore.searchForUser(searchName) : null}
+        onKeyPress={(event) => event.key === 'Enter' ? AvatarStore.searchForUser(searchName) : null}
         disabled={isSearchLoading}
         autoFocus
       />
@@ -147,5 +149,4 @@ class Avatar extends PureComponent {
   }
 }
 
-const ConnectedAvatar = connect(Avatar)
-export default withStyles(styles)((props) => <ConnectedAvatar {...props} />)
+export default withStyles(styles)(observer(Avatar))
