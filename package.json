@@ -17,6 +17,7 @@
     "prebuild": "rimraf ./build",
     "build": "webpack --config webpack/webpack.config.production.js",
     "local-development": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.config.development.js",
+    "prestart": "npm run build",
     "start": "serve ./build",
     "deploy": "...",
     "prepush": "npm run lint"
