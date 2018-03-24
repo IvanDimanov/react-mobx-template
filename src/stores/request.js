@@ -1,3 +1,5 @@
+/* global sessionStorage */
+
 import axios from 'axios'
 
 /* Helps when User reload the page or come from a Login page */
