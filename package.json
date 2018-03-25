@@ -23,7 +23,7 @@
     "prepush": "npm run lint"
   },
   "engines": {
-    "node": ">=8"
+    "node": "8.9.1"
   },
   "standard": {
     "parser": "babel-eslint",
