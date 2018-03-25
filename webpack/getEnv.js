@@ -40,7 +40,7 @@ const getEnv = () => {
    * because of the `webpack.DefinePlugin()`
    * https://webpack.js.org/plugins/define-plugin/#usage
    */
-  const env = envFile
+  return envFile
     .split('\n')
     .filter((line) => line)  // Removes empty lines
     .filter((line) => !line.startsWith('//'))  // Removes "//" comments
