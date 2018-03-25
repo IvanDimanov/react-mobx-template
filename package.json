@@ -66,6 +66,7 @@
     "rimraf": "2.6.2",
     "standard": "10.0.3",
     "uglify-es": "3.3.9",
+    "uglify-js": "3.3.16",
     "uglifyjs-webpack-plugin": "1.2.4",
     "webpack": "3.10.0",
     "webpack-dashboard": "1.0.2",
