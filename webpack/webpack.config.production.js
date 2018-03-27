@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const common = require('./webpack.config.common')
 const getEnv = require('./getEnv')
 
-console.log('getEnv =', getEnv, typeof getEnv)
+console.log('env =', getEnv())
 
 module.exports = merge(common, {
   devtool: 'source-map',
