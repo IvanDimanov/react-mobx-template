@@ -16,10 +16,9 @@
     "test": "echo 'No tests available'; exit 0",
     "prebuild": "rimraf ./build",
     "build": "webpack --config webpack/webpack.config.production.js",
-    "heroku-postbuild": "npm run build",
     "local-development": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.config.development.js",
     "start": "serve ./build",
-    "deploy": "git push heroku master",
+    "deploy": "now && now alias",
     "prepush": "npm run lint"
   },
   "engines": {
@@ -31,6 +30,16 @@
       "notes",
       "build"
     ]
+  },
+  "now": {
+    "files": [
+      "src",
+      "webpack",
+      ".babelrc",
+      ".env"
+    ],
+    "dotenv": true,
+    "alias": "react-mobx-template"
   },
   "dependencies": {
     "axios": "0.18.0",
