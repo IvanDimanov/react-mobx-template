@@ -64,7 +64,7 @@
     "rimraf": "2.6.2",
     "serve": "6.4.9",
     "standard": "10.0.3",
-    "uglify-es": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
+    "uglify-es": "3.3.10",
     "uglify-js": "3.3.16",
     "uglifyjs-webpack-plugin": "1.2.4",
     "webpack": "3.10.0",
