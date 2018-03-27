@@ -18,10 +18,11 @@ const parse = (variable) => {
 }
 
 const getEnv = () => {
-  let envFile
+  let lines = []
 
   try {
-    envFile = fs.readFileSync(ENV_PATH, 'utf-8')
+    const envFile = fs.readFileSync(ENV_PATH, 'utf-8')
+    lines = envFile.split('\n')
   } catch (error) {
     /**
      * Heroku cannot add files outside '.gitignore'
@@ -29,7 +30,7 @@ const getEnv = () => {
      * we gonna fallback to use the default process env vars
      */
     console.warn(`Unable to read file ${ENV_PATH} fallback using process.env:`, error)
-    return process.env
+    lines = Object.keys(process.env).map((key) => `${key}=${process.env[key]}`)
   }
 
   /**
@@ -41,8 +42,7 @@ const getEnv = () => {
    * because of the `webpack.DefinePlugin()`
    * https://webpack.js.org/plugins/define-plugin/#usage
    */
-  return envFile
-    .split('\n')
+  return lines
     .filter((line) => line)  // Removes empty lines
     .filter((line) => !line.startsWith('//'))  // Removes "//" comments
     .filter((line) => !line.startsWith('#'))   // Removes "#" comments
