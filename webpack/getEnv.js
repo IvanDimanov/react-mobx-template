@@ -26,7 +26,7 @@ const getEnv = () => {
     /**
      * Heroku cannot add files outside '.gitignore'
      * and since we cannot commit the '.env' file
-     * we conna fallback to use the default process env vars
+     * we gonna fallback to use the default process env vars
      */
     console.warn(`Unable to read file ${ENV_PATH} fallback using process.env:`, error)
     return process.env
