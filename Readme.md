@@ -1,8 +1,8 @@
 # React MobX template
 Production ready setup for React + MobX
 
-## [Live Demo](https://react-mobx-template ...)
-## [![App](https://raw.githubusercontent.com/IvanDimanov/react-mobx-template/master/image.png)](https://react-mobx-template ...)
+## [Live Demo](https://react-mobx-template.now.sh)
+## [![App](https://raw.githubusercontent.com/IvanDimanov/react-mobx-template/master/image.png)](https://react-mobx-template.now.sh)
 
 ## If you run ...
 ```
