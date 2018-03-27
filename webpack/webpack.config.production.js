@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const common = require('./webpack.config.common')
 const getEnv = require('./getEnv')
@@ -8,9 +7,12 @@ const getEnv = require('./getEnv')
 module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
-    new UglifyJSPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
-      uglifyOptions: { ecma: 8 }
+      ecma:8,
+      compress: {
+        warnings: false
+      }
     }),
 
     new webpack.DefinePlugin({
