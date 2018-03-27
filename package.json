@@ -19,6 +19,7 @@
     "heroku-postbuild": "npm run build",
     "local-development": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.config.development.js",
     "start": "serve ./build",
+    "predeploy": "heroku-dotenv push",
     "deploy": "git push heroku master",
     "prepush": "npm run lint"
   },
