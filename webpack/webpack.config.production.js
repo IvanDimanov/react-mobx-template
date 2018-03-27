@@ -9,7 +9,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
-      ecma:8,
+      ecma: 8,
       compress: {
         warnings: false
       }
