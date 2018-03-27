@@ -6,6 +6,16 @@ const Home = () => <CenteredGrid>
   <p>Production ready setup for React + MobX</p>
   <br />
 
+  <br />
+  { console.log(process.env) }
+
+  <br />
+  { process.env.NODE_ENV }
+
+  <br />
+  { process.env.secret_key }
+
+
   <h2>If you run ...</h2>
   <pre>
     <code>
