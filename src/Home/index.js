@@ -15,7 +15,6 @@ const Home = () => <CenteredGrid>
   <br />
   { process.env.secret_key }
 
-
   <h2>If you run ...</h2>
   <pre>
     <code>
