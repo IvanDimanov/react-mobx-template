@@ -5,15 +5,18 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const common = require('./webpack.config.common')
 const getEnv = require('./getEnv')
 
+console.log('getEnv =', getEnv, typeof getEnv)
+
 module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new UglifyJSPlugin({
       sourceMap: true
-    }),
-
-    new webpack.DefinePlugin({
-      'process.env': getEnv()
     })
+    // ,
+
+    // new webpack.DefinePlugin({
+    //   'process.env': getEnv()
+    // })
   ]
 })
