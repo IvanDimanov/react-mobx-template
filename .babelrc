@@ -1,13 +1,4 @@
 {
   "plugins": ["transform-strict-mode", "transform-class-properties", "syntax-dynamic-import", "transform-async-to-generator"],
-  "presets" : [
-    ["stage-2"],
-    ["env", {
-      "targets": {
-        "uglify" : true
-      }
-    }],
-    ["es2015", {"modules": false}],
-    ["react"]
-  ]
+  "presets" : ["es2015", "react", "stage-2"]
 }
