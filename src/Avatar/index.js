@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import { withStyles } from 'material-ui/styles'
+import LazyLoad from 'react-lazy-load'
 
 import AvatarStore from 'stores/AvatarStore'
 
@@ -46,11 +47,13 @@ class Avatar extends Component {
       key={index}
       className={classes.Card}
     >
-      <CardMedia
-        title={`Image of ${result.login}`}
-        image={result.avatar_url}
-        className={classes.CardMedia}
-      />
+      <LazyLoad height={styles.CardMedia.height}>
+        <CardMedia
+          title={`Image of ${result.login}`}
+          image={result.avatar_url}
+          className={classes.CardMedia}
+        />
+      </LazyLoad>
 
       <CardContent>
         <Typography type='headline' component='h2' noWrap>{result.login}</Typography>
