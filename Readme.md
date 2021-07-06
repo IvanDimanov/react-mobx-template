@@ -1,8 +1,8 @@
 # React MobX template
 Production ready setup for React + MobX
 
-## [Live Demo](https://react-mobx-template.herokuapp.com)
-## [![App](https://raw.githubusercontent.com/IvanDimanov/react-mobx-template/master/image.png)](https://react-mobx-template.herokuapp.com)
+## [Live Demo](https://react-mobx-template.vercel.app)
+## [![App](https://raw.githubusercontent.com/IvanDimanov/react-mobx-template/master/image.png)](https://react-mobx-template.vercel.app)
 
 ## If you run ...
 ```
