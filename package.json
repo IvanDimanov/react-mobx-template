@@ -16,11 +16,8 @@
     "test": "echo 'No tests available'; exit 0",
     "prebuild": "rimraf ./build",
     "build": "webpack --config webpack/webpack.config.production.js",
-    "heroku-postbuild": "npm run build",
     "local-development": "webpack-dashboard -- webpack-dev-server --config webpack/webpack.config.development.js",
     "start": "serve ./build",
-    "predeploy": "heroku-dotenv push",
-    "deploy": "git push heroku master",
     "prepush": "npm run lint"
   },
   "engines": {
@@ -63,7 +60,6 @@
     "babel-preset-stage-0": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
     "eslint": "3.19.0",
-    "heroku-dotenv": "0.4.1",
     "html-webpack-plugin": "2.30.1",
     "husky": "0.14.3",
     "rimraf": "2.6.2",

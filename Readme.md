@@ -8,10 +8,10 @@ Production ready setup for React + MobX
 ```
 git clone git@github.com:IvanDimanov/react-mobx-template.git
 cd react-mobx-template
-npm install
+cp .env-template .env
+npm ci
 npm run local-development
 ```
-Rename `.env-template` to `.env`
 
 ## ... you will get
 - production webpack config with dynamic chunks - `npm run build`

@@ -11,11 +11,11 @@ const Home = () => <CenteredGrid>
     <code>
       git clone git@github.com:IvanDimanov/react-mobx-template.git<br />
       cd react-mobx-template<br />
-      npm install<br />
+      cp .env-template .env<br />
+      npm ci<br />
       npm run local-development<br />
     </code>
   </pre>
-  <p>Rename <code>.env-template</code> to <code>.env</code></p>
   <br />
 
   <h2>... you will get</h2>
